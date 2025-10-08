@@ -1,0 +1,17 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtualenv
+venv/
+.env/
+
+# Docker files
+*.log
+*.pid
+
+# VS Code settings
+.vscode/
+
+# OS files
+.DS_Store
