@@ -2,11 +2,10 @@ from confluent_kafka.avro import AvroProducer
 from confluent_kafka import avro
 import os
 
-# Load Avro schema
+
 schema_path = os.path.join(os.path.dirname(__file__), '..', 'schema', 'user.avsc')
 value_schema = avro.load(schema_path)
 
-# Kafka & Schema Registry configs
 conf = {
     'bootstrap.servers': 'localhost:9092',
     'schema.registry.url': 'http://localhost:8081'
@@ -14,7 +13,7 @@ conf = {
 
 producer = AvroProducer(conf, default_value_schema=value_schema)
 
-# Sample data
+
 users = [
     {"user_id": 1, "name": "Alice", "email": "alice@example.com"},
     {"user_id": 2, "name": "Bob", "email": "bob@example.com"},
